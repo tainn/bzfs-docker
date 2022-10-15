@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  pitch:
+    build:
+      context: .
+    image: bzfs-fedora-base
+    container_name: pitch
+    restart: unless-stopped
+    networks:
+      - bzfs
+    ports:
+      - "5155:5155/udp"
+      - "5155:5155/tcp"
+    working_dir: /core/pitch
+    command: pitch.conf -dd
+
+  black:
+    build:
+      context: .
+    image: bzfs-fedora-base
+    container_name: black
+    restart: unless-stopped
+    networks:
+      - bzfs
+    ports:
+      - "5156:5156/udp"
+      - "5156:5156/tcp"
+    working_dir: /core/black
+    command: black.conf -dd
+
+networks:
+  bzfs:
+    external: true
