@@ -4,13 +4,13 @@ A minimal template for running BZFS via Docker, utilizing docker-compose for con
 
 Inside, placeholders `pitch` and `black` are used, which should be replaced with your own map or service names.
 
-### Base image
+## Base image
 
 Fedora's latest is used as the base image and can be changed with whichever underlying distro you wish that preferably
 includes bzfs in their official repository. Using some minimal base and building from source is also possible to
 minimize the image size, but adds maintenance complexity.
 
-### Compose
+## Compose
 
 Showcases running aforementioned `pitch` and `black` maps/services by building the local image and running each service
 container separately on the same docker network.
@@ -25,7 +25,7 @@ Prior to running, a docker network has to be created:
 docker network create bzfs
 ```
 
-### Core
+## Core
 
 Root directory which is copied into the built image and includes map/service-specific subdirectories. These
 subdirectories primarily include their corresponding [`bzw`](https://wiki.bzflag.org/BZW)
