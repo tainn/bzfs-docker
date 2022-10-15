@@ -25,6 +25,14 @@ Prior to running, a docker network has to be created:
 docker network create bzfs
 ```
 
+The service containers can be run in daemon mode via:
+
+```sh
+docker-compose up pitch black --detach
+```
+
+Note that omitting explicitly specifying the services results in all services of that compose file being run.
+
 ## Core
 
 Root directory which is copied into the built image and includes map/service-specific subdirectories. These
